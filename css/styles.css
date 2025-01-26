@@ -1,0 +1,859 @@
+/* General Styles and RTL Setup */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../assets/fonts/vazir/Vazirmatn-Regular.woff2') format('woff2'),
+         url('../assets/fonts/vazir/Vazirmatn-Regular.woff') format('woff'),
+         url('../assets/fonts/vazir/Vazirmatn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    text-align: right;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.7;
+	direction:rtl;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.section-title p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+/* Hero Section - STATIC REDESIGN (Animations Removed) */
+.hero-section {
+    /* background-image: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%); - Original Gradient - KEPT Static Gradient */
+    background: linear-gradient(45deg, #e0f7fa, #b2ebf2, #80deea, #4dd0e1); /* Solid Gradient - No Animation Now */
+    color: #333;
+    text-align: center;
+    padding: 220px 0; /* Vertical padding retained */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Background Gradient Layer - KEPT static, Animation CSS removed */
+.hero-section .hero-animated-bg {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: linear-gradient(45deg, #e0f7fa, #b2ebf2, #80deea, #4dd0e1); /* Gradient Static Now */
+    /* background-size: 300% 300%;  - ANIMATION REMOVED */
+    /* animation: gradientAnimation 15s linear infinite; - ANIMATION REMOVED */
+    z-index: -1;
+}
+
+/* @keyframes gradientAnimation {  - KEYFRAMES REMOVED */
+/*     0% {
+/*         background-position: 0% 50%;
+/*     }
+/*     50% {
+/*         background-position: 100% 50%;
+/*     }
+/*     100% {
+/*         background-position: 0% 50%;
+/*     }
+/* } */
+
+
+.hero-content {
+    max-width: 950px;
+    padding: 0 20px;
+}
+
+.hero-icon-animated { /* Icon Styles Kept */
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 25px;
+    /* opacity: 0;  - ANIMATION REMOVED */
+    /* transform: translateY(30px); - ANIMATION REMOVED */
+    /* transition: opacity 0.8s ease 0s, transform 0.8s ease 0s; - ANIMATION REMOVED */
+    opacity: 1; /* Ensure Icons are visible now - Static */
+    transform: translateY(0); /* Ensure Icons are in place - Static */
+}
+.hero-icon-animated i {
+    margin: 0 8px;
+}
+
+
+/* .hero-section.aos-animate .hero-icon-animated,  - AOS Animation Selectors Removed */
+/* .hero-section.aos-animate .hero-headline,
+/* .hero-section.aos-animate .hero-subtitle {
+/*     opacity: 1;
+/*     transform: translateY(0);
+/* }
+/* .hero-section.aos-animate .hero-headline {
+/*     transition-delay: 0.2s;
+/* } */
+
+.hero-headline { /* Headline Styles Kept - adjusted to be static visible */
+    font-size: 3.8em;
+    margin-bottom: 25px;
+    color: #2a3b52;
+    line-height: 1.2;
+    /* opacity: 0;  - ANIMATION REMOVED */
+    /* transform: translateY(30px); - ANIMATION REMOVED */
+    /* transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s; - ANIMATION REMOVED */
+    opacity: 1; /* Ensure headline visible now - Static */
+    transform: translateY(0); /* Ensure headline in place - Static */
+}
+
+.hero-subtitle { /* Subtitle Styles Kept - adjusted to be static visible */
+    font-size: 1.6em;
+    color: #5d6d7e;
+    /* opacity: 0;  - ANIMATION REMOVED */
+    /* transform: translateY(30px); - ANIMATION REMOVED */
+    /* transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s; - ANIMATION REMOVED */
+    opacity: 1; /* Ensure subtitle visible now - Static */
+    transform: translateY(0); /* Ensure subtitle in place - Static */
+    margin-bottom: 45px;
+    line-height: 1.8;
+}
+
+
+.cta-button { /* CTA Button Styles Kept, animation reduced to only hover effect now */
+    display: inline-block;
+    padding: 20px 45px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 7px 18px rgba(0, 123, 255, 0.45);
+    /* animation: pulse-button-hero 2.5s infinite alternate; - Pulse animation REMOVED for static design */
+    animation: none; /* Make sure button pulse animation is disabled if it was still running from previous iteration */
+}
+
+
+/* @keyframes pulse-button-hero { - Keyframes for button pulse animation REMOVED */
+/*     0% {
+/*         transform: scale(1);
+/*         box-shadow: 0 7px 18px rgba(0, 123, 255, 0.45);
+/*     }
+/*     100% {
+/*         transform: scale(1.06);
+/*         box-shadow: 0 9px 22px rgba(0, 123, 255, 0.6);
+/*     }
+/* } */
+
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.7);
+    animation-play-state: paused; /* Keep hover pause animation for clarity */
+}
+
+
+.scroll-down { /* Scroll down icon style kept */
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(50%);
+    cursor: pointer;
+}
+
+.scroll-down i {
+    font-size: 2.2em;
+    color: #555;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce { /* Bounce animation - Kept unchanged */
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-25px);
+    }
+    60% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* Features Section (Rest of CSS remains unchanged) */
+.features-section {
+    padding: 80px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+.feature-card .feature-icon {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #343a40;
+}
+.feature-card p {
+    font-size: 1em;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .feature-card .feature-icon {
+        font-size: 3.5em;
+    }
+}
+
+
+/* Timeline Section */
+.timeline-section {
+    background-color: #e9ecef;
+    padding: 80px 0;
+}
+
+.timeline {
+    max-width: 1000px;
+    margin: 50px auto;
+    position: relative;
+    padding: 30px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 50px;
+    width: 2px;
+    background-color: #007bff;
+}
+
+.timeline-step {
+    margin-bottom: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-step .timeline-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-right: 25px;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.timeline-content {
+    width: calc(100% - 90px);
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        right: 10px;
+    }
+    .timeline-step {
+        flex-direction: row-reverse;
+        margin-bottom: 60px;
+    }
+    .timeline-step .timeline-circle {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .timeline-content {
+        width: calc(100% - 60px);
+    }
+}
+
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.faq-question {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.faq-question:hover {
+    background-color: #e9ecef;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.faq-answer p {
+    padding: 15px 0;
+    line-height: 1.8;
+}
+
+.faq-answer.show {
+    max-height: 800px;
+    padding: 15px 20px;
+}
+
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.swiper-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.swiper-slide {
+    text-align: center;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    margin-bottom: 20px;
+}
+
+.testimonial-text p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.rating {
+    color: #ffc107;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #495057;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #007bff;
+}
+
+/* Buy Now Section */
+.buy-now-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.buy-now-box {
+    background-color: #e0fae7;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    padding: 50px;
+    margin: 0 auto 30px;
+    max-width: 850px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    /* background-image: linear-gradient(to bottom, #e0fae7, #d0f0d7); */
+}
+
+.buy-now-box::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 10px, transparent 10px, transparent 20px);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+
+.buy-now-box h3 {
+    font-size: 2.2em;
+    color: #1e7e34;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+.buy-now-box h3 i {
+    font-size: 0.8em;
+    margin-right: 15px;
+    color: #1e7e34;
+}
+
+
+.buy-button {
+    display: inline-block;
+    padding: 20px 45px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* box-shadow transition retained */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    /* animation: pulse-button-hero 2.5s infinite alternate; - Pulse Animation REMOVED */
+    animation: none; /* Make absolutely sure pulse animation is off now */
+}
+
+
+/* @keyframes pulse-button-hero {  - Keyframes for pulse button animation REMOVED */
+/*     0% {
+/*         transform: scale(1);
+/*         box-shadow: 0 7px 18px rgba(0, 123, 255, 0.45);
+/*     }
+/*     100% {
+/*         transform: scale(1.06);
+/*         box-shadow: 0 9px 22px rgba(0, 123, 255, 0.6);
+/*     }
+/* } */
+
+
+.buy-button:hover {
+    background-color: #218838;
+    transform: scale(1.07);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    animation-play-state: paused;
+}
+
+
+.persuasive-text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: right;
+}
+
+.persuasive-text ul {
+    list-style: none;
+    padding-right: 20px;
+}
+
+.persuasive-text li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 30px;
+}
+
+.persuasive-text li i {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    color: #28a745;
+}
+
+.persuasive-text p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* Guarantee and Limited Offer Badges in Buy Box */
+.guarantee-badge, .limited-offer-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff;
+    color: #28a745;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-weight: 500;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    position: absolute;
+    z-index: 2;
+}
+
+.guarantee-badge {
+    top: 20px;
+    right: 20px;
+}
+.limited-offer-badge {
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffc107;
+    color: #333;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.guarantee-badge i, .limited-offer-badge i {
+    margin-right: 8px;
+    font-size: 1em;
+}
+
+
+/* --- ENHANCED Footer Section Styles --- */
+.footer-section.enhanced-footer {
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2); /* Gradient background for footer */
+    padding: 70px 0; /* Increased padding for more visual presence */
+    text-align: center;
+    position: relative; /* For divider positioning */
+    overflow: hidden; /* To contain gradient nicely */
+}
+
+.footer-divider { /* Divider Styling */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px; /* Thicker divider */
+    background: #007bff; /* Primary brand blue color */
+    opacity: 0.8; /* Slightly translucent divider */
+    margin: 0 auto 20px; /* Added margin below divider */
+    width: 80%; /* Reduced width for divider, spanning less than full footer width */
+    border-radius: 2px; /* Slight border radius for rounded ends */
+}
+
+.footer-section.enhanced-footer .footer-content {
+    max-width: 900px; /* Reduced content max width in footer */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; /* Stack tagline and social icons vertically on smaller screens */
+    align-items: center;
+}
+
+
+.footer-tagline h3 {
+    font-size: 1.7em; /* Larger tagline font */
+    color: #3a4a60; /* Tagline text color */
+    margin-bottom: 25px; /* Spacing below tagline */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); /* Subtle text shadow for tagline */
+}
+
+
+.footer-section.enhanced-footer .footer-social { /* Enhanced social icons style */
+    display: flex; /* Arrange icons horizontally using flexbox */
+    justify-content: center; /* Center icons */
+    margin-bottom: 30px; /* Increased margin below social icons */
+}
+
+.footer-section.enhanced-footer .footer-social a {
+    color: #495057; /* Darker social icon color */
+    font-size: 1.8em; /* Larger social icons */
+    margin: 0 20px; /* Increased spacing between icons */
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Added transition for transform and text-shadow */
+}
+
+.footer-section.enhanced-footer .footer-social a:hover {
+    color: #007bff; /* Icon color on hover - primary brand color */
+    transform: scale(1.1); /* Slight scale up on hover */
+    text-shadow: 0 0 10px #007bff; /* Subtle glowing effect on hover */
+}
+
+
+.footer-section.enhanced-footer .footer-copyright { /* Enhanced copyright style in enhanced footer */
+    padding-top: 30px; /* More padding above copyright */
+    border-top: none; /* No border line above copyright in enhanced footer */
+    color: #6c757d; /* Slightly lighter copyright text color */
+    font-size: 0.95em; /* Slightly smaller copyright font size */
+}
+
+
+@media (max-width: 768px) {
+    .footer-section.enhanced-footer {
+        padding: 60px 0; /* Reduced padding for smaller screens */
+    }
+    .footer-tagline h3 {
+        font-size: 1.5em; /* Smaller tagline font on mobile */
+    }
+    .footer-section.enhanced-footer .footer-social a {
+        font-size: 1.6em; /* Smaller social icons on mobile */
+        margin: 0 15px; /* Reduced icon spacing on mobile */
+    }
+    .footer-section.enhanced-footer .footer-copyright {
+        font-size: 0.9em; /* Even smaller copyright font size on mobile if needed */
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 180px 0;
+    }
+    .hero-headline {
+        font-size: 2.6em;
+    }
+    .hero-subtitle {
+        font-size: 1.2em;
+        margin-bottom: 35px;
+    }
+    .hero-icon-animated {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .feature-card .feature-icon {
+        font-size: 3.5em;
+    }
+
+
+    .buy-now-box {
+        padding: 30px;
+    }
+    .buy-now-box h3 {
+        font-size: 1.8em;
+    }
+    .buy-button {
+        padding: 16px 40px;
+        font-size: 1.2em;
+    }
+    .guarantee-badge, .limited-offer-badge {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+    .guarantee-badge {
+        top: 10px;
+        right: 10px;
+    }
+    .limited-offer-badge {
+        bottom: 10px;
+        left: 10px;
+    }
+
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social, .footer-contact, .footer-links {
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 20px;
+    }
+}
+
+/* --- New Plugin Interface Sections Styles --- */
+.plugin-interface-sections {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Section background - adjust if needed */
+}
+
+.interface-section, .guided-tour-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px; /* Increased section padding */
+    display: flex;
+    align-items: center; /* Vertically align image and description */
+    flex-direction: row-reverse; /* Image on the right for RTL */
+    gap: 40px; /* Spacing between image and description */
+}
+
+.interface-section:nth-child(even), .guided-tour-section:nth-child(even) { /* Even numbered sections reverse layout */
+    flex-direction: row; /* Image on the left for even sections */
+}
+
+.interface-image, .guided-tour-gif {
+    flex: 1; /* Allow image to grow to fill available space */
+    max-width: 60%; /* Limit max width of image container */
+    border-radius: 10px;
+    overflow: hidden; /* Clip image to rounded corners */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Shadow for images */
+}
+.interface-image img, .guided-tour-gif img {
+    display: block; /* Ensure image fills container */
+    width: 100%; /* Image width 100% of container */
+    height: auto; /* Maintain image aspect ratio */
+}
+
+.interface-description, .guided-tour-description {
+    flex: 1; /* Allow description to grow and take remaining space */
+    max-width: 40%; /* Limit description width - you can adjust ratio */
+    text-align: right; /* Right-align description text in RTL */
+}
+
+.interface-description h3, .guided-tour-description h3 {
+    font-size: 1.8em;
+    color: #343a40; /* Darker description titles */
+    margin-bottom: 15px;
+}
+
+.interface-description p, .guided-tour-description p {
+    font-size: 1.1em;
+    color: #555; /* Slightly darker description paragraph */
+    line-height: 1.8; /* Improved line height for readability */
+}
+
+@media (max-width: 768px) { /* Responsive for plugin interface sections */
+    .interface-section, .guided-tour-section {
+        flex-direction: column-reverse; /* Stack image above description on mobile */
+        text-align: center; /* Center align text on mobile */
+        padding: 30px 20px; /* Reduce padding for mobile */
+        gap: 25px; /* Reduce gap for mobile */
+    }
+
+    .interface-section:nth-child(even), .guided-tour-section:nth-child(even) { /* Reset flex-direction for even mobile sections */
+        flex-direction: column-reverse; /* Still stack image above description on mobile */
+    }
+
+    .interface-image, .guided-tour-gif {
+        max-width: 100%; /* Image full width on mobile */
+        margin-bottom: 20px; /* Add space below image on mobile */
+    }
+
+    .interface-description, .guided-tour-description {
+        max-width: 100%; /* Description full width on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .interface-description h3, .guided-tour-description h3 {
+        font-size: 1.6em; /* Slightly smaller titles on mobile */
+    }
+    .interface-description p, .guided-tour-description p {
+        font-size: 1em; /* Slightly smaller paragraph text on mobile */
+    }
+}
